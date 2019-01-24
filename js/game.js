@@ -9,8 +9,6 @@ let c;
 
 const init = () => {
     initializeClock();
-    initializeEventHandlers();
-
 }
 
 const initializeClock = () => {
