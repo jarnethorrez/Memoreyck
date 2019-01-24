@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Van Eyck's View</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="body--scan">
+    <div class="brush-timer"></div>
+    <div class="contentContainer">
+      <div>
+        <h1>Scan de barcode op uw ticket.</h1>
+        <video class="scan-video" autoplay muted loop>
+          <source src="../assets/video/scan.mp4"
+                  type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+        <a href="index.html" class="btn" draggable="false">Terug</a>
+      </div>
+ </div>
+
+ <div class="overlay-js">
+  </div>
+
+ <div class="popup-js popup hidden">
+    <h1>Geslaagd!</h1>
+    <div class="penselen-potje-container">
+      <img class="penselen-potje-image" src="../assets/img/potje-penselen.png" alt="penselenpotje" width="420" height="500">
+      <div class="aantal-penselen">18</div>
+    </div>
+    <p>U heeft momenteel <span>18</span> penselen.</p>
+  </div>
+
+  <script src="../js/scanTicket.js" charset="utf-8"></script>
+</body>
+</html>

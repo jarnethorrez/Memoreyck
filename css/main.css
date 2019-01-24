@@ -1,0 +1,389 @@
+@import "reset.css";
+@import "fonts.css";
+@import "vars.css";
+
+body {
+  background: url(../assets/img/bg.png) no-repeat center center fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+  text-align: center;
+  font-family: Cochin;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/*
+* {
+  cursor: none;
+} */
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.body--scan {
+  background: none;
+}
+
+.contentContainer {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentContainer h1 {
+  font-family: Scribe;
+  font-size: 3.6vw;
+  color: white;
+}
+
+.contentContainer p {
+  font-size: 2.8vw;
+  color: white;
+  line-height: 4vw;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3vw;
+  margin-bottom: 10vw;
+}
+
+.contentContainer .afterGame {
+  width: 80%;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.penselenContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 8vw;
+}
+
+.penselen-image {
+  width: 18vw;
+  height: auto;
+  margin-right: -8vw;
+  margin-bottom: -2vw;
+}
+
+.no-penselen-image {
+  display: block;
+  width: 18vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3vw;
+  margin-bottom: 12vw;
+}
+
+.penselen-aantal {
+  font-size: 8vw;
+  font-weight: bold;
+  color: white;
+}
+
+.btn {
+  font-family: Scribe;
+  font-size: 3.2vw;
+  color: white;
+  text-decoration: none;
+  background: url(../assets/img/button.png) no-repeat;
+  background-size: contain;
+  background-position: center 28%;
+  margin: 0 auto;
+  padding: 3vw 13vw;
+}
+
+.btn--left-corner {
+  font-size: 1.8vw;
+  background-position: center 45%;
+  padding: 3.2vw 4vw;
+  position: absolute;
+  left: 1vw;
+  bottom: 0;
+}
+
+.ingame-left {
+  width: 28%;
+}
+
+.clock {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 6fr 4fr;
+  transform-origin: top center;
+  animation: swingClock 3s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes swingClock {
+  0% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+.clock img {
+  width: 58%;
+  margin: 0 21%;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.clock .timer {
+  font-family: 'Cochin';
+  color: var(--DarkRed);
+  font-size: 7vw;
+  text-align: center;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  align-self: center;
+}
+
+.languageSelector {
+  position: absolute;
+  right: 3vw;
+  top: 3vh;
+  background: var(--DarkRed);
+  border-radius: .5rem;
+  font-family: helvetica;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.languageSelector p {
+  font-family: sans-serif;
+  font-size: 1.5vw;
+  line-height: 2vw;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.languageSelector li {
+  font-size: 1.5vw;
+  text-align: left;
+  line-height: 2vw;
+  color: white;
+  border-bottom: .03rem solid white;
+  font-weight: normal;
+  padding: 1rem 1.5rem;
+}
+
+.languageSelector li:last-child {
+  border: none;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.brush-timer {
+  position: relative;
+  width: 110vw;
+  height: 2.3vw;
+  top: -.6vw;
+  left: -110vw;
+  background: url(../assets/img/brush-stroke-timer.png) no-repeat;
+  background-size: cover;
+  z-index: 10;
+}
+
+@keyframes brushTimer {
+  from {
+    left: -110vw;
+  }
+  to {
+    left: -5vw;
+  }
+}
+
+.scan-video {
+  display: block;
+  width: 60vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 4vw;
+  margin-bottom: 6vw;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  background-color: var(--VuilWit);
+  padding: 5vw 12vw;
+  border-radius: 1.5vw;
+}
+
+.popup h1 {
+  font-family: Scribe;
+  font-size: 3vw;
+}
+
+.popup p {
+  font-family: Cochin;
+  font-size: 2.5vw;
+  width: max-content;
+  margin: 0 auto;
+}
+
+
+.penselen-potje-container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 4vw;
+  margin-bottom: 5vw;
+}
+
+.aantal-penselen {
+  color: var(--VuilWit);
+  position: absolute;
+  left: 47.8%;
+  top: 56%;
+  font-family: Cochin;
+  font-size: 5vw;
+}
+
+.penselen-potje-image {
+  position: relative;
+  width: 16vw;
+  height: auto;
+}
+
+.popup-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
+  position: absolute;
+  animation: fadeToPopup 500ms;
+  display: grid;
+  grid-template-columns: 1fr 10vw 10vw 50vw 1fr;
+  grid-template-rows: 1fr 60vh 1fr;
+}
+
+.popup-info {
+  background: var(--VuilWit);
+  grid-row: 2;
+  grid-column: 3 / span 2;
+  border-radius: 1rem;
+  animation: upScale 500ms;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  position: relative;
+}
+
+.popup-info h1 {
+  font-size: 3vw;
+  font-family: Scribe;
+  padding-left: 18vw;
+  margin-bottom: 2vw;
+  padding-right: 3vw;
+  line-height: 3.5vw;
+}
+
+.popup-info p {
+  font-size: 2.5vw;
+  line-height: 3vw;
+  padding-left: 18vw;
+  padding-right: 3vw;
+}
+
+.popup-close {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  width: 2vw;
+}
+
+@keyframes upScale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes downScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.popup-image {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  height: 70%;
+  border-radius: 1rem;
+  border: .5rem solid var(--DarkRed);
+  align-self: center;
+  opacity: 0;
+  animation: 250ms opacityUp 500ms forwards;
+}
+
+@keyframes opacityUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeToPopup {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
+@keyframes fadeOutPopup {
+  from {
+    background: rgba(0, 0, 0, .5);
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
