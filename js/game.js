@@ -107,6 +107,7 @@ const checkPair = () => {
       const p = new PopUp(`../assets/img/detail-${id}.png`, 'Paar gevonden!', info[id-1], popupClose);
       p.draw();
 
+      score++;
       selectedCards = [];
     }, 500);
 
@@ -127,6 +128,12 @@ const checkPair = () => {
 }
 
 const popupClose = () => {
+
+  if(score == 6) {
+    localStorage.setItem(`score`, getScore());
+    window.location.href = "endGood.html";
+  }
+
   c.unpauseTime();
 }
 
@@ -143,6 +150,13 @@ const timeUp = () => {
   } else {
     window.location.href = "endBad.html";
   }
+}
+
+const getScore = () => {
+  const finalScore = Math.round((score * 3) + (c.secondsLeft / (time/2)), 0);
+  localStorage.setItem(`score`, finalScore);
+
+  return finalScore;
 }
 
 init();
