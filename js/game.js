@@ -1,20 +1,7 @@
 const Clock = require(`../js/classes/Clock`);
 const PopUp = require(`../js/classes/PopUp`);
 
-const cards = [
-  [1, `detailOne.png`],
-  [2, `detailTwo.png`],
-  [3, `detailThree.png`],
-  [4, `detailFour.png`],
-  [5, `detailFive.png`],
-  [6, `detailSix.png`],
-  [1, `detailOne.png`],
-  [2, `detailTwo.png`],
-  [3, `detailThree.png`],
-  [4, `detailFour.png`],
-  [5, `detailFive.png`],
-  [6, `detailSix.png`]
-];
+const cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
 
 let score = 0;
 let $hints;
@@ -63,14 +50,14 @@ const createCard = i => {
   $playableCard = document.createElement(`div`);
   $playableCard.classList.add(`playableCard`);
   $playableCard.classList.add(`unguessed`);
-  $playableCard.id = `${cards[i][0]}`;
+  $playableCard.id = `${cards[i]}`;
 
   $inner = document.createElement(`div`);
   $inner.classList.add('inner');
 
   $front = document.createElement(`div`);
   $front.classList.add(`front`);
-  $front.style.backgroundImage = (`url(../assets/img/${cards[i][1]})`);
+  $front.style.backgroundImage = (`url(../assets/img/detail-${cards[i]}.png)`);
 
   $back = document.createElement(`div`);
   $back.classList.add(`back`);

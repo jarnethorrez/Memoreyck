@@ -104,7 +104,7 @@
 }
 
 .selectorOne .front {
-  background: url(../assets/img/detailOne.png);
+  background: url(../assets/img/detail-1.png);
 }
 
 .selectorTwo {
@@ -113,7 +113,7 @@
 }
 
 .selectorTwo .front {
-  background: url(../assets/img/detailTwo.png);
+  background: url(../assets/img/detail-2.png);
 }
 
 .selectorThree {
@@ -122,7 +122,7 @@
 }
 
 .selectorThree .front {
-  background: url(../assets/img/detailThree.png);
+  background: url(../assets/img/detail-3.png);
 }
 
 .selectorFour {
@@ -131,7 +131,7 @@
 }
 
 .selectorFour .front {
-  background: url(../assets/img/detailFour.png);
+  background: url(../assets/img/detail-4.png);
 }
 
 .selectorFive {
@@ -140,7 +140,7 @@
 }
 
 .selectorFive .front {
-  background: url(../assets/img/detailFive.png);
+  background: url(../assets/img/detail-5.png);
 }
 
 .selectorSix {
@@ -149,7 +149,7 @@
 }
 
 .selectorSix .front {
-  background: url(../assets/img/detailSix.png);
+  background: url(../assets/img/detail-6.png);
 }
 
 @keyframes flipCard {
