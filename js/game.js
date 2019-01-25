@@ -101,8 +101,20 @@ const handleCardClick = e => {
 const checkPair = () => {
 
   if(selectedCards[0] == selectedCards[1]) {
+    let id;
+    setTimeout(() => {
+      const $guessed = document.querySelectorAll(`.rotatedCard`);
+      $guessed.forEach($card => {
+        $card.parentElement.classList.remove(`unguessed`);
+        id = $card.parentElement.id;
+      });
 
-      console.log('Correct');
+      //const p = new PopUp('../assets/img/', 'Paar gevonden!', 'Goeike maat');
+      //p.draw();
+
+      selectedCards = [];
+    }, 500);
+
 
   } else {
     setTimeout(() => {
@@ -113,8 +125,8 @@ const checkPair = () => {
           $inner.classList.remove(`rotatedCard`);
         }
       });
+      selectedCards = [];
     }, 1000);
-    selectedCards = [];
   }
 
 }
