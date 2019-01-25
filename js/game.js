@@ -21,6 +21,7 @@ let $hints;
 let $colorFeedback;
 let time = 60;
 let c;
+let selectedCards = [];
 
 const init = () => {
     initializeClock();
@@ -78,7 +79,23 @@ const createCard = i => {
 
   $playableCard.appendChild($inner);
 
+  $playableCard.addEventListener(`click`, handleCardClick);
+
   return $playableCard;
+}
+
+const handleCardClick = e => {
+  selectedCards.push(e.currentTarget.id);
+  console.log(selectedCards.length);
+  if (selectedCards.length == 2) {
+    console.log("hey");
+    const $inner = e.currentTarget.querySelector(`.inner`);
+    $inner.classList.add(`rotatedCard`);
+    console.log(selectedCards);
+  } else if(selectedCards.length < 3) {
+    const $inner = e.currentTarget.querySelector(`.inner`);
+    $inner.classList.add(`rotatedCard`);
+  }
 }
 
 const shuffle = (o) => {

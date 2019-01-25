@@ -184,6 +184,10 @@
   align-self: center
 }
 
+/* .playableCard:hover .inner {
+  transform: rotateY(180deg);
+} */
+
 .playableCard .inner {
   position: relative;
   width: 90%;
@@ -204,4 +208,14 @@
 
 .playableCard .front {
   background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.playableCard .back {
+  background: var(--DarkRed);
+  transform: rotateY(0);
+}
+
+.rotatedCard {
+  transform: rotateY(180deg);
 }
