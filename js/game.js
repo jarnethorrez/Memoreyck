@@ -62,6 +62,7 @@ const createCards = () => {
 const createCard = i => {
   $playableCard = document.createElement(`div`);
   $playableCard.classList.add(`playableCard`);
+  $playableCard.classList.add(`unguessed`);
   $playableCard.id = `${cards[i][0]}`;
 
   $inner = document.createElement(`div`);
@@ -86,16 +87,36 @@ const createCard = i => {
 
 const handleCardClick = e => {
   selectedCards.push(e.currentTarget.id);
-  console.log(selectedCards.length);
+
   if (selectedCards.length == 2) {
-    console.log("hey");
+    checkPair();
     const $inner = e.currentTarget.querySelector(`.inner`);
     $inner.classList.add(`rotatedCard`);
-    console.log(selectedCards);
   } else if(selectedCards.length < 3) {
     const $inner = e.currentTarget.querySelector(`.inner`);
     $inner.classList.add(`rotatedCard`);
   }
+}
+
+const checkPair = () => {
+
+  if(selectedCards[0] == selectedCards[1]) {
+
+      console.log('Correct');
+
+  } else {
+    setTimeout(() => {
+      const $unguessedCards = document.querySelectorAll(`.unguessed`);
+      $unguessedCards.forEach($card => {
+        const $inner = $card.querySelector(`.inner`);
+        if($inner.classList.contains(`rotatedCard`)) {
+          $inner.classList.remove(`rotatedCard`);
+        }
+      });
+    }, 1000);
+    selectedCards = [];
+  }
+
 }
 
 const shuffle = (o) => {
