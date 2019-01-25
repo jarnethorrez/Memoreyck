@@ -2,6 +2,14 @@ const Clock = require(`../js/classes/Clock`);
 const PopUp = require(`../js/classes/PopUp`);
 
 const cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+const info = [
+  'Een duif, recht boven het lam. Een representatie voor de aanwezigheid van Christus',
+  'Het lam bloedt in een gouden kelk. Zonder enige emotie, een verwijzing naar Christus zijn zelfopoffering.',
+  'De twaalf apostelen, de dichtste volgers van Christus kunnen natuurlijk niet ontbreken.',
+  'Dit zijn 2 pausen en een antipaus. Ze representeren een turbulente periode van de kerk.',
+  'Deze 2 mannen zijn profeten die de komst van Christus voorspeld hebben.',
+  'De vele herkenbare planten worden afgebeeld met bijna perfecte biologische nauwkeurigheid.'
+]
 
 let score = 0;
 let $hints;
@@ -34,7 +42,6 @@ const resetDom = () => {
 const initializeClock = () => {
   c = new Clock(time, timeUp);
   c.draw();
-  //c.startTimer();
 }
 
 const createCards = () => {
@@ -44,6 +51,7 @@ const createCards = () => {
   for (let i = 0; i < 12; i++) {
     $cardDeck.appendChild(createCard(i));
   }
+  c.startTimer();
 }
 
 const createCard = i => {
@@ -88,16 +96,16 @@ const handleCardClick = e => {
 const checkPair = () => {
 
   if(selectedCards[0] == selectedCards[1]) {
-    let id;
+    let id = selectedCards[0];
     setTimeout(() => {
       const $guessed = document.querySelectorAll(`.rotatedCard`);
       $guessed.forEach($card => {
         $card.parentElement.classList.remove(`unguessed`);
-        id = $card.parentElement.id;
       });
 
-      //const p = new PopUp('../assets/img/', 'Paar gevonden!', 'Goeike maat');
-      //p.draw();
+      c.pauseTime();
+      const p = new PopUp(`../assets/img/detail-${id}.png`, 'Paar gevonden!', info[id-1], popupClose);
+      p.draw();
 
       selectedCards = [];
     }, 500);
@@ -116,6 +124,10 @@ const checkPair = () => {
     }, 1000);
   }
 
+}
+
+const popupClose = () => {
+  c.unpauseTime();
 }
 
 const shuffle = (o) => {
