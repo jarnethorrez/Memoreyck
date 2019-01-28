@@ -17,6 +17,8 @@ let $colorFeedback;
 let time = 60;
 let c;
 let selectedCards = [];
+let startGame = false;
+const animationDelay = 100;
 
 const init = () => {
     initializeClock();
@@ -54,12 +56,19 @@ const createCards = () => {
     $cardDeck.appendChild(createCard(i));
   }
   c.startTimer();
+  setTimeout(() => {
+    startGame = true;
+  }, 12 * animationDelay);
 }
 
 const createCard = i => {
   $playableCard = document.createElement(`div`);
   $playableCard.classList.add(`playableCard`);
   $playableCard.classList.add(`unguessed`);
+  $playableCard.style.animation = `fadeIn`;
+  $playableCard.style.animationFillMode = `forwards`;
+  $playableCard.style.animationDuration = `500ms`;
+  $playableCard.style.animationDelay = `${i * animationDelay}ms`;
   $playableCard.id = `${cards[i]}`;
 
   $inner = document.createElement(`div`);
@@ -83,7 +92,7 @@ const createCard = i => {
 }
 
 const handleCardClick = e => {
-  if(!e.currentTarget.querySelector(`.inner`).classList.contains(`rotatedCard`)) {
+  if(!e.currentTarget.querySelector(`.inner`).classList.contains(`rotatedCard`) && startGame) {
     selectedCards.push(e.currentTarget.id);
 
     if (selectedCards.length == 2) {

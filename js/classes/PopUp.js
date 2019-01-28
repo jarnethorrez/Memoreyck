@@ -44,7 +44,6 @@ class PopUp {
   }
 
    handleContainerClicked(e, callback) {
-
     const $img = document.querySelector(`.popup-image`);
     $img.style.opacity = '1';
     $img.style.animationDelay = '0ms';

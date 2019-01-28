@@ -47,7 +47,7 @@
   opacity: 0;
   width: 7vw;
   height: 7vw;
-  animation: 500ms fadeInSelector 1s forwards ease,
+  animation: 500ms fadeIn 1s forwards ease,
              500ms flipCard 3s forwards,
              650ms removeCards 4s forwards ease-out;
   perspective: 1000px;
@@ -80,7 +80,7 @@
   border: .1rem solid white;
 }
 
-@keyframes fadeInSelector {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -181,7 +181,8 @@
   height: 16.75vw;
   width: 100%;
   justify-self: center;
-  align-self: center
+  align-self: center;
+  opacity: 0;
 }
 
 /* .playableCard:hover .inner {
