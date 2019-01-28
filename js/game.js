@@ -24,12 +24,11 @@ const init = () => {
     setTimeout(() => {
 
       resetDom();
-      
+
       shuffle(cards);
       createCards();
 
       shuffle(cards);
-      console.log(cards);
 
 
     }, 4500);
@@ -84,15 +83,17 @@ const createCard = i => {
 }
 
 const handleCardClick = e => {
-  selectedCards.push(e.currentTarget.id);
+  if(!e.currentTarget.querySelector(`.inner`).classList.contains(`rotatedCard`)) {
+    selectedCards.push(e.currentTarget.id);
 
-  if (selectedCards.length == 2) {
-    checkPair();
-    const $inner = e.currentTarget.querySelector(`.inner`);
-    $inner.classList.add(`rotatedCard`);
-  } else if(selectedCards.length < 3) {
-    const $inner = e.currentTarget.querySelector(`.inner`);
-    $inner.classList.add(`rotatedCard`);
+    if (selectedCards.length == 2) {
+      checkPair();
+      const $inner = e.currentTarget.querySelector(`.inner`);
+      $inner.classList.add(`rotatedCard`);
+    } else if(selectedCards.length < 3) {
+      const $inner = e.currentTarget.querySelector(`.inner`);
+      $inner.classList.add(`rotatedCard`);
+    }
   }
 }
 
