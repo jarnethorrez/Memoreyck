@@ -104,7 +104,7 @@
 }
 
 .selectorOne .front {
-  background: url(../assets/img/detail-1.png);
+  background: url(../assets/img/detail-1.png)
 }
 
 .selectorTwo {
@@ -152,6 +152,10 @@
   background: url(../assets/img/detail-6.png);
 }
 
+.detailSelector .front {
+  background-size: cover;
+}
+
 @keyframes flipCard {
   from {
     transform: rotateY(0);
@@ -184,10 +188,6 @@
   align-self: center;
   opacity: 0;
 }
-
-/* .playableCard:hover .inner {
-  transform: rotateY(180deg);
-} */
 
 .playableCard .inner {
   position: relative;
