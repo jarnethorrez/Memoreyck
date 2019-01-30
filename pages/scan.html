@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Memoreyck</title>
+  <title>Van Eyck or Not?</title>
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="body--scan">
@@ -25,15 +25,21 @@
  <div class="overlay-js">
   </div>
 
+<input type="text" class="scanInput hideForm" required autoFocus>
+
  <div class="popup-js popup hidden">
     <h1>Geslaagd!</h1>
     <div class="penselen-potje-container">
       <img class="penselen-potje-image" src="../assets/img/potje-penselen.png" alt="penselenpotje" width="420" height="500">
-      <div class="aantal-penselen">18</div>
+      <div class="penselen--user-totaal newScore-js"></div>
     </div>
-    <p>U heeft momenteel <span>18</span> penselen.</p>
+    <p>U heeft momenteel <span class="newScore-js"></span> penselen.</p>
   </div>
 
+  <div class="alreadyPlayedGamePopup-js popup hidden">
+    <h1>Oepsie...</h1>
+    <p class="already-played-game-p">U heeft al penselen verdiend met dit spel. Speel andere minigames om meer penselen te verdienen!</p>
+  </div>
   <script src="../js/scanTicket.js" charset="utf-8"></script>
 </body>
 </html>

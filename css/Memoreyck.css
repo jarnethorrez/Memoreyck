@@ -72,7 +72,7 @@
 }
 
 .detailSelector .back {
-  background: var(--DarkRed);
+  background: var(--DarkRed) url(../assets/img/Pattern.png);
   transform: rotateY(180deg);
 }
 
@@ -213,7 +213,7 @@
 }
 
 .playableCard .back {
-  background: var(--DarkRed);
+  background: var(--DarkRed) url(../assets/img/Pattern.png);
   transform: rotateY(0);
 }
 

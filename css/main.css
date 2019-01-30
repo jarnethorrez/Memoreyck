@@ -29,6 +29,13 @@ body {
   opacity: 0;
 }
 
+.hideForm {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
 .body--scan {
   background: none;
 }
@@ -198,7 +205,7 @@ body {
 }
 
 .brush-timer {
-  position: relative;
+  position: absolute;
   width: 110vw;
   height: 2.3vw;
   top: -.6vw;
@@ -244,8 +251,13 @@ body {
 .popup p {
   font-family: Cochin;
   font-size: 2.5vw;
-  width: max-content;
+  max-width: 40vw;
   margin: 0 auto;
+}
+
+.already-played-game-p {
+  margin-top: 2vw;
+  line-height: 3vw;
 }
 
 
@@ -259,10 +271,11 @@ body {
 .aantal-penselen {
   color: var(--VuilWit);
   position: absolute;
-  left: 47.8%;
+  left: 4%;
   top: 56%;
   font-family: Cochin;
   font-size: 5vw;
+  text-align: center;
 }
 
 .penselen-potje-image {

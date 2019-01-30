@@ -37,7 +37,7 @@ const init = () => {
 }
 
 const resetDom = () => {
-  $painting = document.querySelector(`.painting`);
+  const $painting = document.querySelector(`.painting`);
   $painting.classList.remove('painting');
   $painting.classList.add('card-deck');
   $painting.innerHTML = ``;
@@ -50,7 +50,7 @@ const initializeClock = () => {
 
 const createCards = () => {
 
-  $cardDeck = document.querySelector(`.card-deck`);
+  const $cardDeck = document.querySelector(`.card-deck`);
 
   for (let i = 0; i < 12; i++) {
     $cardDeck.appendChild(createCard(i));
@@ -62,7 +62,7 @@ const createCards = () => {
 }
 
 const createCard = i => {
-  $playableCard = document.createElement(`div`);
+  const $playableCard = document.createElement(`div`);
   $playableCard.classList.add(`playableCard`);
   $playableCard.classList.add(`unguessed`);
   $playableCard.style.animation = `fadeIn`;
@@ -71,14 +71,14 @@ const createCard = i => {
   $playableCard.style.animationDelay = `${i * animationDelay}ms`;
   $playableCard.id = `${cards[i]}`;
 
-  $inner = document.createElement(`div`);
+  const $inner = document.createElement(`div`);
   $inner.classList.add('inner');
 
-  $front = document.createElement(`div`);
+  const $front = document.createElement(`div`);
   $front.classList.add(`front`);
   $front.style.backgroundImage = (`url(../assets/img/detail-${cards[i]}.png)`);
 
-  $back = document.createElement(`div`);
+  const $back = document.createElement(`div`);
   $back.classList.add(`back`);
 
   $inner.appendChild($front);
