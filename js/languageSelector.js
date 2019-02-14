@@ -1,5 +1,7 @@
 let $languageSelector;
 let $chosenLanguageShort;
+let $languageList;
+let $short;
 const $overlay = document.querySelector(`.overlay-js`);
 const languages = ['🇳🇱 Nederlands', '🇫🇷 Français', '🇬🇧 English', '🇪🇸 Espagnol', '🇩🇪 Deutsch', '🇮🇹 Italiano'];
 const languagesShort = ['🇳🇱 NL', '🇫🇷 FR', '🇬🇧 EN', '🇪🇸 ES', '🇩🇪 DE', '🇮🇹 IT'];
@@ -28,7 +30,7 @@ const handleLSClick = e => {
 
   if(!$languageSelector.classList.contains(`LSOpen`)) {
 
-    const $languageList = createLanguageList();
+    $languageList = createLanguageList();
 
     $chosenLanguageShort = $languageSelector.innerText;
     $languageSelector.innerHTML = '';

@@ -252,11 +252,12 @@ body {
   font-family: Cochin;
   font-size: 2.5vw;
   max-width: 40vw;
+  width: max-content;
   margin: 0 auto;
 }
 
 .already-played-game-p {
-  margin-top: 2vw;
+  padding-top: 2vw;
   line-height: 3vw;
 }
 
@@ -266,6 +267,16 @@ body {
   margin: 0 auto;
   margin-top: 4vw;
   margin-bottom: 5vw;
+}
+
+.penselen--user-totaal {
+  color: var(--VuilWit);
+  position: absolute;
+  left: 48%;
+  top: 56%;
+  font-family: Cochin;
+  font-size: 5vw;
+  text-align: center;
 }
 
 .aantal-penselen {
