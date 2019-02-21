@@ -19,10 +19,14 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-/*
-* {
+
+*,
+a,
+a:link,
+a:visited,
+a:active {
   cursor: none;
-} */
+}
 
 .hidden {
   display: none;
